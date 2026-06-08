@@ -25,8 +25,8 @@
   "scripts": {
     "build": "tsup --config tsup.config.ts",
     "dev": "tsup --config tsup.config.ts --watch",
-    "test": "vitest run",
-    "test:unit": "vitest run",
+    "test": "vitest run --pool=vmThreads",
+    "test:unit": "vitest run --pool=vmThreads",
     "protocol:test-server": "node tools/protocol-test-server.js",
     "test:demo": "node demo/node-demo.js",
     "copy:lua-client": "node tools/copy-lua-client.js",
@@ -49,11 +49,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "ajv": "^8.17.1",
     "@types/node": "^24.10.1",
-    "vitest": "^1.4.0",
+    "ajv": "^8.17.1",
     "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.6"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.23.0",
